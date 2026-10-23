@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart — Apple Finder Tashkent</title>
+  <meta name="description" content="Review your selected Apple devices. Place a free 24-hour reservation hold at authorized Tashkent retailers (MacBro, iSpace, MediaPark, Malika) with 1-year official warranty.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/hub_styles.css">
+  <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body class="cart-page-body">
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header class="site-header hub-global-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-group" title="Back to Apple Finder">
+        <div class="brand-logo-icon">
+          <svg class="apple-svg-logo" viewBox="0 0 170 170" width="22" height="22" fill="currentColor">
+            <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-6.19-9.56-11.16-20.78-14.92-33.65-3.76-12.87-5.64-24.81-5.64-35.83 0-14.56 3.69-26.69 11.07-36.4 7.38-9.71 16.73-14.65 28.05-14.82 4.35 0 9.29 1.1 14.82 3.31 5.53 2.21 9.4 3.37 11.61 3.48 2.65-.22 6.77-1.44 12.36-3.65 5.59-2.21 10.33-3.21 14.23-3 10.97.43 19.82 4.33 26.54 11.71 6.72 7.38 10.8 16.48 12.24 27.29-9.78 5.86-14.6 14.12-14.46 24.76.14 8.7 3.49 16.03 10.05 21.99 6.56 5.96 14.23 9.44 23.01 10.45-2.02 6.52-4.58 13.08-7.68 19.68zM119.22 31.86c0-6.95 2.53-13.48 7.59-19.58 5.06-6.1 11.39-10.22 18.99-12.35.22 1.52.33 2.83.33 3.91 0 7.17-2.67 13.91-8 20.21-5.33 6.3-11.77 10.37-19.32 12.21-.59-1.52-.89-2.99-.89-4.4z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Apple Finder</span>
+          <span class="brand-country">Tashkent</span>
+        </div>
+      </a>
+
+      <!-- Category Ribbon with Compare -->
+      <nav class="hub-categories-ribbon">
+        <a href="iphone.html" class="cat-pill-switch">iPhone</a>
+        <a href="mac.html" class="cat-pill-switch">Mac</a>
+        <a href="ipad.html" class="cat-pill-switch">iPad</a>
+        <a href="watch.html" class="cat-pill-switch">Watch</a>
+        <a href="airpods.html" class="cat-pill-switch">AirPods</a>
+        <a href="compare.html" class="cat-pill-switch">Compare</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="../index.html" class="btn-subtle-nav">← Main Page</a>
+        <a href="cart.html" class="cart-btn active" title="Shopping Cart">
+          <span class="cart-icon">🛍️</span>
+          <span class="cart-label">Cart</span>
+          <span class="cart-count-pill" id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CART CONTENT ==================== -->
+  <main class="cart-main-content">
+    <div class="container">
+      
+      <!-- Breadcrumbs -->
+      <div class="cart-breadcrumbs">
+        <a href="../index.html">Apple Finder</a> &gt; <strong class="active-crumb">Reservation Cart</strong>
+      </div>
+
+      <!-- Page Title Row -->
+      <div class="cart-page-header-row">
+        <h1 class="cart-page-title">
+          <span>🛍️ Your Shopping Cart</span>
+          <span class="cart-count-badge" id="cartPageItemCount">0 items</span>
+        </h1>
+        <a href="../index.html#categories" class="cart-continue-link">
+          ← Continue Browsing Devices
+        </a>
+      </div>
+
+      <!-- 2-Column Layout -->
+      <div class="cart-page-layout">
+        <!-- Left Column: Items List -->
+        <div class="cart-items-column" id="cartPageItemsList">
+          <!-- Dynamically populated by js/cart.js -->
+        </div>
+
+        <!-- Right Column: Order Reservation Summary -->
+        <div class="cart-summary-column" id="cartPageSummaryBox">
+          <div class="cart-summary-card">
+            <h2 class="summary-card-title">Reservation Summary</h2>
+            <p class="summary-card-sub">Free 24-hour price hold across Tashkent retailers</p>
+
+            <div class="summary-rows-wrap">
+              <div class="summary-row">
+                <span>Devices Subtotal:</span>
+                <strong id="cartPageSubtotal">0 UZS</strong>
+              </div>
+              <div class="summary-row">
+                <span>UzIMEI State Registration:</span>
+                <span style="color: #166534; font-weight: 700;">Included (Free)</span>
+              </div>
+              <div class="summary-row">
+                <span>Official Warranty (1 Year):</span>
+                <span style="color: #166534; font-weight: 700;">Included (Free)</span>
+              </div>
+              <div class="summary-row total-row">
+                <span>Total Payable Upon Pickup:</span>
+                <span class="summary-total-val" id="cartPageTotal">0 UZS</span>
+              </div>
+            </div>
+
+            <!-- Store Selector & Reservation Form -->
+            <div class="summary-form-section">
+              <div>
+                <label class="summary-field-label" for="cartPickupStore">Pickup Retailer in Tashkent:</label>
+                <select class="summary-select" id="cartPickupStore">
+                  <option value="MacBro (C-1, Amir Timur Ave 47)">MacBro (C-1, Tashkent Center)</option>
+                  <option value="iSpace APR (Tashkent City Mall, 1st Fl)">iSpace APR (Tashkent City Mall)</option>
+                  <option value="MediaPark (Qoratosh St 11A, Shaykhontohur)">MediaPark Hypermarket (Qoratosh)</option>
+                  <option value="Malika Market (Row A-24, Navoi/Labzak)">Malika Market (Row A, Navoi/Labzak)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="summary-field-label" for="cartCustName">Your Full Name:</label>
+                <input type="text" class="summary-input" id="cartCustName" placeholder="e.g. Aziz Rakhimov" value="Aziz Rakhimov">
+              </div>
+
+              <div>
+                <label class="summary-field-label" for="cartCustPhone">Phone Number for SMS Code:</label>
+                <input type="tel" class="summary-input" id="cartCustPhone" placeholder="+998 90 123 45 67" value="+998 90 123 45 67">
+              </div>
+            </div>
+
+            <button class="btn-cart-reserve" onclick="proceedCartCheckout()">
+              <span>Confirm Reservation in Tashkent</span>
+              <span>→</span>
+            </button>
+
+            <button class="btn-clear-cart-link" onclick="clearCart()">
+              Clear Cart
+            </button>
+
+            <!-- Trust Badges -->
+            <div class="summary-trust-badges">
+              <div class="trust-badge-item">
+                <span>🛡️</span>
+                <div>
+                  <strong>Payment strictly upon pickup</strong>
+                  <div>No online prepayment required. Verify the serial number and box seal integrity directly at the store.</div>
+                </div>
+              </div>
+              <div class="trust-badge-item">
+                <span>📱</span>
+                <div>
+                  <strong>100% Official UzIMEI</strong>
+                  <div>All devices are officially customs-cleared and registered in the state database of Uzbekistan.</div>
+                </div>
+              </div>
+              <div class="trust-badge-item">
+                <span>🛠️</span>
+                <div>
+                  <strong>1-Year Reseller Warranty</strong>
+                  <div>Official repair service and immediate exchange in case of factory defects.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== DETAILED PRODUCT MODAL ==================== -->
+  <div class="modal-backdrop" id="productDetailModal" onclick="closeProductDetailModal(event)"></div>
+
+  <!-- Reservation Confirmation Modal -->
+  <div class="modal-backdrop" id="reservationModal" onclick="closeModal('reservationModal')">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 class="modal-title">Reservation Confirmed! (Tashkent)</h3>
+        <button class="modal-close" onclick="closeModal('reservationModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">
+          Your order has been reserved successfully! An SMS code with pickup details has been dispatched to your mobile. The device is locked for you for 24 hours.
+        </p>
+        <div class="modal-selected-summary">
+          <div id="modalProductName" style="font-weight: 700; color: #1d1d1f; margin-bottom: 6px;">Selected Devices</div>
+          <div id="modalStoreName" style="color: #0071e3; font-size: 0.92rem; font-weight: 600;">Pickup Store</div>
+        </div>
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 12px; margin-top: 14px; font-size: 0.85rem; color: #166534;">
+          ✓ No advance payment is needed. Pay at the checkout counter via cash, Uzcard, Humo, or Visa/Mastercard.
+        </div>
+        <button class="btn-primary" style="width: 100%; margin-top: 20px;" onclick="closeModal('reservationModal')">
+          Got it, thank you!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="app-toast" id="appToast">Notification</div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© 2026 Apple Finder Tashkent. Official original Apple device discovery platform in Tashkent.</p>
+      <div class="footer-links-inline">
+        <a href="../index.html">← Main Page</a> · 
+        <a href="compare.html">Compare Devices</a> · 
+        <a href="iphone.html">iPhone</a> · 
+        <a href="mac.html">MacBook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
