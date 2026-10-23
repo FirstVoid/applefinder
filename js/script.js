@@ -1672,15 +1672,15 @@ function initHubHero3DCards() {
       const normX = (x / bounds.width) * 2 - 1;
       const normY = (y / bounds.height) * 2 - 1;
 
-      // Subtle Apple tilt: max ~5.2 degrees (refined effect requested by user)
-      targetRotY = normX * 5.2;
-      targetRotX = -normY * 5.2;
+      // Dynamic 3D tilt: max ~8.2 degrees (close to main menu 9.5deg, clearly visible and fluid)
+      targetRotY = normX * 8.2;
+      targetRotX = -normY * 8.2;
 
       // Specular spotlight glare
       if (glare) {
         const glareX = (x / bounds.width) * 100;
         const glareY = (y / bounds.height) * 100;
-        glare.style.background = `radial-gradient(circle 420px at ${glareX.toFixed(1)}% ${glareY.toFixed(1)}%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.07) 45%, transparent 75%)`;
+        glare.style.background = `radial-gradient(circle 480px at ${glareX.toFixed(1)}% ${glareY.toFixed(1)}%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.12) 42%, transparent 75%)`;
       }
 
       if (!rafId) {
@@ -1699,38 +1699,38 @@ function initHubHero3DCards() {
     });
 
     function updateCardPhysics() {
-      const ease = 0.11;
+      const ease = 0.12;
       currentRotX += (targetRotX - currentRotX) * ease;
       currentRotY += (targetRotY - currentRotY) * ease;
 
-      const scale = isHovered ? 1.01 : 1.0;
-      card.style.transform = `perspective(1600px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg) scale3d(${scale}, ${scale}, ${scale})`;
+      const scale = isHovered ? 1.014 : 1.0;
+      card.style.transform = `perspective(1350px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg) scale3d(${scale}, ${scale}, ${scale})`;
 
       if (imgWrap) {
-        const imgShiftX = currentRotY * 0.9;
-        const imgShiftY = -currentRotX * 0.9;
+        const imgShiftX = currentRotY * 1.3;
+        const imgShiftY = -currentRotX * 1.3;
         imgWrap.style.transform = isHovered
-          ? `scale(1.03) translateZ(28px) translate3d(${imgShiftX.toFixed(1)}px, ${imgShiftY.toFixed(1)}px, 0)`
+          ? `scale(1.05) translateZ(38px) translate3d(${imgShiftX.toFixed(1)}px, ${imgShiftY.toFixed(1)}px, 0)`
           : "";
       }
 
       if (info) {
         info.style.transform = isHovered
-          ? `translateZ(18px) translate3d(${(currentRotY * 0.45).toFixed(1)}px, ${(-currentRotX * 0.45).toFixed(1)}px, 0)`
+          ? `translateZ(24px) translate3d(${(currentRotY * 0.6).toFixed(1)}px, ${(-currentRotX * 0.6).toFixed(1)}px, 0)`
           : "";
       }
 
       if (badge) {
         badge.style.transform = isHovered
-          ? `translateZ(34px) translate3d(${(currentRotY * 0.7).toFixed(1)}px, ${(-currentRotX * 0.7).toFixed(1)}px, 0)`
+          ? `translateZ(45px) translate3d(${(currentRotY * 0.85).toFixed(1)}px, ${(-currentRotX * 0.85).toFixed(1)}px, 0)`
           : "";
       }
 
       if (metaPills && metaPills.length > 0) {
         metaPills.forEach((pill, idx) => {
-          const factor = 0.5 + (idx * 0.1);
+          const factor = 0.6 + (idx * 0.12);
           pill.style.transform = isHovered
-            ? `translateZ(24px) translate3d(${(currentRotY * factor).toFixed(1)}px, ${(-currentRotX * factor).toFixed(1)}px, 0)`
+            ? `translateZ(30px) translate3d(${(currentRotY * factor).toFixed(1)}px, ${(-currentRotX * factor).toFixed(1)}px, 0)`
             : "";
         });
       }

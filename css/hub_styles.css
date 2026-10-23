@@ -160,6 +160,23 @@
 /* ==================== HERO SHOWCASE BANNER ==================== */
 .hub-hero-section {
   padding: 36px 0 24px;
+  animation: hubHeroSectionFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hub-hero-section .container {
+  perspective: 1400px;
+  position: relative;
+}
+
+@keyframes hubHeroSectionFade {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hub-hero-card {
@@ -173,15 +190,14 @@
   gap: 48px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  animation: hubHeroEntrance 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
   transform-style: preserve-3d;
   transition: box-shadow 0.35s ease;
   will-change: transform;
 }
 
 .hub-hero-card:hover {
-  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 35px 85px rgba(0, 0, 0, 0.40);
 }
 
 .hub-hero-glare {
@@ -190,20 +206,18 @@
   border-radius: 28px;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.35s ease;
-  z-index: 4;
+  transition: opacity 0.3s ease;
+  z-index: 10;
   mix-blend-mode: overlay;
 }
 
-@keyframes hubHeroEntrance {
-  0% {
-    opacity: 0;
-    transform: translateY(32px) scale(0.975);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+.hub-hero-info,
+.hub-hero-media,
+.hub-hero-img-wrap,
+.hub-hero-badge,
+.hub-meta-pill {
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .hub-hero-card::before {
