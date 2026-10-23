@@ -208,41 +208,50 @@
             <p class="quiz-subheading">Select your primary activity to let our algorithm recommend optimal hardware specifications.</p>
 
             <div class="quiz-options-cards-grid">
-              <div class="quiz-card-option selected" onclick="selectQuizOption(this, 'study')">
+              <div class="quiz-card-option selected" onclick="selectQuizOption('useCase', 'study', this)">
                 <span class="quiz-card-icon">🎓</span>
-                <span class="quiz-card-text">Study / Education</span>
+                <span class="quiz-card-text">Study & Education</span>
+                <span class="quiz-card-desc">Notes, lectures, PDFs, research & daily tasks</span>
               </div>
-              <div class="quiz-card-option" onclick="selectQuizOption(this, 'office')">
+              <div class="quiz-card-option" onclick="selectQuizOption('useCase', 'office', this)">
                 <span class="quiz-card-icon">💼</span>
-                <span class="quiz-card-text">Office Work</span>
+                <span class="quiz-card-text">Office & Business</span>
+                <span class="quiz-card-desc">Multitasking, spreadsheets, presentations & calls</span>
               </div>
-              <div class="quiz-card-option" onclick="selectQuizOption(this, 'programming')">
+              <div class="quiz-card-option" onclick="selectQuizOption('useCase', 'programming', this)">
                 <span class="quiz-card-icon">💻</span>
-                <span class="quiz-card-text">Programming</span>
+                <span class="quiz-card-text">Programming & Code</span>
+                <span class="quiz-card-desc">Xcode, Docker, compilation & engineering</span>
               </div>
-              <div class="quiz-card-option" onclick="selectQuizOption(this, 'design')">
+              <div class="quiz-card-option" onclick="selectQuizOption('useCase', 'design', this)">
                 <span class="quiz-card-icon">🎨</span>
-                <span class="quiz-card-text">Design & Art</span>
+                <span class="quiz-card-text">Design & Digital Art</span>
+                <span class="quiz-card-desc">Pencil illustration, color grading & graphics</span>
               </div>
-              <div class="quiz-card-option" onclick="selectQuizOption(this, 'video')">
+              <div class="quiz-card-option" onclick="selectQuizOption('useCase', 'video', this)">
                 <span class="quiz-card-icon">🎬</span>
-                <span class="quiz-card-text">Video Editing</span>
+                <span class="quiz-card-text">4K/8K Video Editing & 3D</span>
+                <span class="quiz-card-desc">ProRes editing, Blender & rendering</span>
               </div>
-              <div class="quiz-card-option" onclick="selectQuizOption(this, 'photo')">
+              <div class="quiz-card-option" onclick="selectQuizOption('useCase', 'photo', this)">
                 <span class="quiz-card-icon">📷</span>
-                <span class="quiz-card-text">Photography</span>
+                <span class="quiz-card-text">Photography & Social</span>
+                <span class="quiz-card-desc">Pro cameras, optical zoom & reel creation</span>
               </div>
-              <div class="quiz-card-option" onclick="selectQuizOption(this, 'social')">
-                <span class="quiz-card-icon">📱</span>
-                <span class="quiz-card-text">Social Media</span>
-              </div>
-              <div class="quiz-card-option" onclick="selectQuizOption(this, 'gaming')">
+              <div class="quiz-card-option" onclick="selectQuizOption('useCase', 'gaming', this)">
                 <span class="quiz-card-icon">🎮</span>
-                <span class="quiz-card-text">Gaming</span>
+                <span class="quiz-card-text">Gaming & Entertainment</span>
+                <span class="quiz-card-desc">Ray tracing, 120Hz display & Arcade</span>
               </div>
-              <div class="quiz-card-option" onclick="selectQuizOption(this, 'everyday')">
-                <span class="quiz-card-icon">☕</span>
-                <span class="quiz-card-text">Everyday Use</span>
+              <div class="quiz-card-option" onclick="selectQuizOption('useCase', 'fitness', this)">
+                <span class="quiz-card-icon">🏃</span>
+                <span class="quiz-card-text">Sports & Health Tracking</span>
+                <span class="quiz-card-desc">Biometrics, GPS, workout tracking & vitals</span>
+              </div>
+              <div class="quiz-card-option" onclick="selectQuizOption('useCase', 'audio', this)">
+                <span class="quiz-card-icon">🎧</span>
+                <span class="quiz-card-text">Music & Commuting</span>
+                <span class="quiz-card-desc">Active Noise Cancellation & Spatial Audio</span>
               </div>
             </div>
           </div>

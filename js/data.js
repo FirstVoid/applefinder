@@ -987,6 +987,12 @@ const CATEGORY_HUBS = {
   }
 };
 
+if (typeof window !== 'undefined') {
+  window.PRODUCTS_DATA = PRODUCTS_DATA;
+  window.STORES_DATA = STORES_DATA;
+  window.CATEGORY_HUBS = CATEGORY_HUBS;
+}
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { PRODUCTS_DATA, STORES_DATA, CATEGORY_HUBS };
 }
