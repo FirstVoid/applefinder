@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSearch();
   initRealTashkentMap();
   initHero3DCard();
+  initHubHero3DCards();
   initScrollReveal();
 
   if (document.getElementById("quizStepContainer")) {
@@ -1618,7 +1619,150 @@ function initHero3DCard() {
 }
 
 // ==========================================================================
-// 12. Apple-Grade Scroll Reveal & Fluid Cascade Engine
+// 12. Apple Subtle 3D Card Engine for Category Hero Banners (Subtle Effect)
+// ==========================================================================
+function initHubHero3DCards() {
+  const cards = document.querySelectorAll(".hub-hero-card");
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    // Ensure glare layer exists
+    let glare = card.querySelector(".hub-hero-glare");
+    if (!glare) {
+      glare = document.createElement("div");
+      glare.className = "hub-hero-glare";
+      card.appendChild(glare);
+    }
+
+    const imgWrap = card.querySelector(".hub-hero-img-wrap") || card.querySelector(".hub-hero-media");
+    const info = card.querySelector(".hub-hero-info");
+    const badge = card.querySelector(".hub-hero-badge");
+    const metaPills = card.querySelectorAll(".hub-meta-pill");
+
+    let isHovered = false;
+    let targetRotX = 0;
+    let targetRotY = 0;
+    let currentRotX = 0;
+    let currentRotY = 0;
+    let rafId = null;
+    let bounds = null;
+
+    function updateBounds() {
+      bounds = card.getBoundingClientRect();
+    }
+
+    window.addEventListener("resize", updateBounds, { passive: true });
+    window.addEventListener("scroll", updateBounds, { passive: true });
+
+    card.addEventListener("mouseenter", () => {
+      isHovered = true;
+      updateBounds();
+      if (glare) glare.style.opacity = "1";
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateCardPhysics);
+      }
+    });
+
+    card.addEventListener("mousemove", (e) => {
+      if (!bounds) updateBounds();
+      const x = e.clientX - bounds.left;
+      const y = e.clientY - bounds.top;
+
+      // Normalized from -1 to 1
+      const normX = (x / bounds.width) * 2 - 1;
+      const normY = (y / bounds.height) * 2 - 1;
+
+      // Subtle Apple tilt: max ~5.2 degrees (refined effect requested by user)
+      targetRotY = normX * 5.2;
+      targetRotX = -normY * 5.2;
+
+      // Specular spotlight glare
+      if (glare) {
+        const glareX = (x / bounds.width) * 100;
+        const glareY = (y / bounds.height) * 100;
+        glare.style.background = `radial-gradient(circle 420px at ${glareX.toFixed(1)}% ${glareY.toFixed(1)}%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.07) 45%, transparent 75%)`;
+      }
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateCardPhysics);
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      isHovered = false;
+      targetRotX = 0;
+      targetRotY = 0;
+      if (glare) glare.style.opacity = "0";
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateCardPhysics);
+      }
+    });
+
+    function updateCardPhysics() {
+      const ease = 0.11;
+      currentRotX += (targetRotX - currentRotX) * ease;
+      currentRotY += (targetRotY - currentRotY) * ease;
+
+      const scale = isHovered ? 1.01 : 1.0;
+      card.style.transform = `perspective(1600px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg) scale3d(${scale}, ${scale}, ${scale})`;
+
+      if (imgWrap) {
+        const imgShiftX = currentRotY * 0.9;
+        const imgShiftY = -currentRotX * 0.9;
+        imgWrap.style.transform = isHovered
+          ? `scale(1.03) translateZ(28px) translate3d(${imgShiftX.toFixed(1)}px, ${imgShiftY.toFixed(1)}px, 0)`
+          : "";
+      }
+
+      if (info) {
+        info.style.transform = isHovered
+          ? `translateZ(18px) translate3d(${(currentRotY * 0.45).toFixed(1)}px, ${(-currentRotX * 0.45).toFixed(1)}px, 0)`
+          : "";
+      }
+
+      if (badge) {
+        badge.style.transform = isHovered
+          ? `translateZ(34px) translate3d(${(currentRotY * 0.7).toFixed(1)}px, ${(-currentRotX * 0.7).toFixed(1)}px, 0)`
+          : "";
+      }
+
+      if (metaPills && metaPills.length > 0) {
+        metaPills.forEach((pill, idx) => {
+          const factor = 0.5 + (idx * 0.1);
+          pill.style.transform = isHovered
+            ? `translateZ(24px) translate3d(${(currentRotY * factor).toFixed(1)}px, ${(-currentRotX * factor).toFixed(1)}px, 0)`
+            : "";
+        });
+      }
+
+      if (isHovered || Math.abs(targetRotX - currentRotX) > 0.03 || Math.abs(targetRotY - currentRotY) > 0.03) {
+        rafId = requestAnimationFrame(updateCardPhysics);
+      } else {
+        card.style.transform = "";
+        if (imgWrap) imgWrap.style.transform = "";
+        if (info) info.style.transform = "";
+        if (badge) badge.style.transform = "";
+        if (metaPills) metaPills.forEach(p => p.style.transform = "");
+        rafId = null;
+      }
+    }
+
+    // Mobile gyroscope
+    if (window.DeviceOrientationEvent && typeof window.DeviceOrientationEvent.requestPermission !== "function") {
+      window.addEventListener("deviceorientation", (e) => {
+        if (window.innerWidth > 992) return;
+        if (e.gamma !== null && e.beta !== null) {
+          const clampY = Math.max(-6, Math.min(6, e.gamma / 3.5));
+          const clampX = Math.max(-6, Math.min(6, (e.beta - 45) / 4.5));
+          card.style.transform = `perspective(1200px) rotateX(${-clampX.toFixed(1)}deg) rotateY(${clampY.toFixed(1)}deg)`;
+        }
+      }, { passive: true });
+    }
+  });
+}
+
+// ==========================================================================
+// 13. Apple-Grade Scroll Reveal & Fluid Cascade Engine
 // ==========================================================================
 function initScrollReveal() {
   const selector = [

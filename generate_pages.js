@@ -342,6 +342,7 @@ function generateSubsiteHTML(categoryName) {
     <section class="hub-hero-section">
       <div class="container">
         <div class="hub-hero-card" style="--accent-hub: ${meta.accentColor};">
+          <div class="hub-hero-glare"></div>
           <div class="hub-hero-info">
             <div class="hub-hero-badge">${meta.heroBadge}</div>
             <h1 class="hub-hero-title">${meta.heroHeadline}</h1>
