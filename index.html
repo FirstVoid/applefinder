@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Finder Uzbekistan — Прототип онлайн-платформы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-area" onclick="scrollToSection('hero')">
+        <span class="apple-logo-icon"></span>
+        <div class="brand-text">
+          <span class="brand-name">Apple Finder</span>
+          <span class="brand-country">Uzbekistan</span>
+        </div>
+        <span class="prototype-badge">Prototype</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#hero" class="nav-item active" data-target="hero">Home</a>
+        <a href="#categories" class="nav-item" data-target="categories">Products</a>
+        <a href="#compare-section" class="nav-item" data-target="compare-section">Compare</a>
+        <a href="#sellers-section" class="nav-item" data-target="sellers-section">Find a Store</a>
+        <a href="#quiz-section" class="nav-item" data-target="quiz-section">Help Me Choose</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search iPhone, MacBook, iPad..." class="search-field" id="globalSearch">
+        </div>
+
+        <div class="location-chip" id="locationChip">
+          <span class="loc-icon">📍</span>
+          <select id="citySelect" class="city-dropdown">
+            <option value="tashkent" selected>Tashkent</option>
+            <option value="samarkand">Samarkand</option>
+            <option value="bukhara">Bukhara</option>
+            <option value="andijan">Andijan</option>
+            <option value="namangan">Namangan</option>
+            <option value="fergana">Fergana</option>
+          </select>
+        </div>
+
+        <button class="compare-counter-btn" id="compareBadgeBtn" onclick="scrollToSection('compare-section')">
+          <span class="scale-icon">⚖️</span>
+          <span>Compare</span>
+          <span class="compare-count-pill" id="compareCount">3</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== VALUE PROPOSITION STRIP (Image 3) ==================== -->
+  <div class="value-strip">
+    <div class="container value-strip-inner">
+      <div class="value-item">
+        <div class="value-icon-box">🎛️</div>
+        <div class="value-text">
+          <strong>Personalise</strong>
+          <span>Specs matched to students & budget</span>
+        </div>
+      </div>
+      <div class="value-divider"></div>
+      <div class="value-item">
+        <div class="value-icon-box">⚖️</div>
+        <div class="value-text">
+          <strong>Compare</strong>
+          <span>Vetted retailers side by side</span>
+        </div>
+      </div>
+      <div class="value-divider"></div>
+      <div class="value-item">
+        <div class="value-icon-box">🛍️</div>
+        <div class="value-text">
+          <strong>Purchase</strong>
+          <span>Reserve in store or get express delivery</span>
+        </div>
+      </div>
+      <div class="value-divider"></div>
+      <button class="btn-parents-shortlist" onclick="openModal('shortlistModal')">
+        <span>👨‍👩‍👧 Shareable List for Parents</span>
+      </button>
+    </div>
+  </div>
+
+  <main class="main-content">
+    
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-content">
+            <div class="hero-badge-pill">
+              <span class="pulse-dot"></span>
+              Официальный UI-прототип платформы
+            </div>
+            <h1 class="hero-title">Find Your Perfect Apple.</h1>
+            <p class="hero-desc">
+              Explore Apple products, compare features, and discover trusted sellers across Uzbekistan — all in one place.
+            </p>
+            <div class="hero-cta-group">
+              <button class="btn-primary" onclick="scrollToSection('popular-section')">
+                <span>Explore Products</span>
+                <span class="btn-arrow">→</span>
+              </button>
+              <button class="btn-secondary" onclick="scrollToSection('sellers-section')">
+                <span>Find a Store</span>
+              </button>
+            </div>
+            
+            <div class="hero-stats">
+              <div class="stat-pill">
+                <span class="stat-num">4,700+</span>
+                <span class="stat-label">Products listed</span>
+              </div>
+              <div class="stat-pill">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Verified sellers</span>
+              </div>
+              <div class="stat-pill">
+                <span class="stat-num">1 Year</span>
+                <span class="stat-label">Official warranty</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-image-container">
+              <img src="assets/images/hero.jpg" alt="Apple Ecosystem" class="hero-img">
+              <div class="floating-tag tag-1">
+                <span class="floating-icon">⚡</span>
+                <div class="floating-info">
+                  <strong>A18 Pro & M3 Series</strong>
+                  <span>Latest 2024 Apple Silicon</span>
+                </div>
+              </div>
+              <div class="floating-tag tag-2">
+                <span class="floating-icon">🛡️</span>
+                <div class="floating-info">
+                  <strong>Verified Retailers</strong>
+                  <span>Warranty & UzIMEI registered</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. SHOP BY CATEGORY ==================== -->
+    <section class="section categories-section" id="categories">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div>
+            <h2 class="section-title">Shop by Category</h2>
+            <p class="section-subtitle">Choose the category that matches your everyday workflow</p>
+          </div>
+          <a href="#popular-section" class="section-link">View all catalogue →</a>
+        </div>
+
+        <div class="categories-grid">
+          <!-- iPhone -->
+          <div class="category-card" onclick="filterCategory('iPhone')">
+            <div class="category-img-box">
+              <img src="assets/images/iphone.jpg" alt="iPhone" class="category-card-img">
+            </div>
+            <div class="category-info">
+              <h3 class="category-title">iPhone</h3>
+              <p class="category-tagline">Powerful. Beautiful. Essential.</p>
+              <span class="category-link">Explore →</span>
+            </div>
+          </div>
+
+          <!-- MacBook -->
+          <div class="category-card" onclick="filterCategory('MacBook')">
+            <div class="category-img-box">
+              <img src="assets/images/macbook.jpg" alt="MacBook" class="category-card-img">
+            </div>
+            <div class="category-info">
+              <h3 class="category-title">MacBook</h3>
+              <p class="category-tagline">Performance meets portability.</p>
+              <span class="category-link">Explore →</span>
+            </div>
+          </div>
+
+          <!-- iPad -->
+          <div class="category-card" onclick="filterCategory('iPad')">
+            <div class="category-img-box">
+              <img src="assets/images/ipad.jpg" alt="iPad" class="category-card-img">
+            </div>
+            <div class="category-info">
+              <h3 class="category-title">iPad</h3>
+              <p class="category-tagline">Create. Learn. Work. Play.</p>
+              <span class="category-link">Explore →</span>
+            </div>
+          </div>
+
+          <!-- Apple Watch -->
+          <div class="category-card" onclick="filterCategory('Apple Watch')">
+            <div class="category-img-box">
+              <img src="assets/images/watch.jpg" alt="Apple Watch" class="category-card-img">
+            </div>
+            <div class="category-info">
+              <h3 class="category-title">Apple Watch</h3>
+              <p class="category-tagline">Health. Fitness. Connection.</p>
+              <span class="category-link">Explore →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. POPULAR PRODUCTS (CATALOGUE CARDS) ==================== -->
+    <section class="section popular-section" id="popular-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div>
+            <h2 class="section-title">Popular Products</h2>
+            <p class="section-subtitle">Most viewed and compared devices this week</p>
+          </div>
+          <div class="filter-pills-bar">
+            <button class="pill-btn active" onclick="setProductFilter('all', this)">All</button>
+            <button class="pill-btn" onclick="setProductFilter('iPhone', this)">iPhone</button>
+            <button class="pill-btn" onclick="setProductFilter('MacBook', this)">MacBook</button>
+            <button class="pill-btn" onclick="setProductFilter('iPad', this)">iPad</button>
+            <button class="pill-btn" onclick="setProductFilter('Apple Watch', this)">Apple Watch</button>
+            <button class="pill-btn" onclick="setProductFilter('AirPods', this)">AirPods</button>
+          </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+          <!-- Card 1: iPhone 16 Pro Max -->
+          <div class="product-item-card" data-category="iPhone">
+            <div class="product-item-badge">✓ Verified in Stock</div>
+            <div class="product-item-image-wrap" onclick="showProductDetails('iphone-16-pro-max')">
+              <img src="assets/images/iphone.jpg" alt="iPhone 16 Pro Max" class="product-item-img">
+            </div>
+            <div class="product-item-colors">
+              <span class="color-dot" style="background: #1f2022;" title="Black Titanium"></span>
+              <span class="color-dot" style="background: #f2f1ed;" title="White Titanium"></span>
+              <span class="color-dot" style="background: #9f9990;" title="Natural Titanium"></span>
+              <span class="color-dot active" style="background: #c7b198;" title="Desert Titanium"></span>
+            </div>
+            <h4 class="product-item-name" onclick="showProductDetails('iphone-16-pro-max')">iPhone 16 Pro Max</h4>
+            <div class="product-item-price-from">From 15,499,000 UZS</div>
+            <div class="product-item-spec">A18 Pro chip • 256 GB – 1 TB</div>
+            <div class="product-item-actions">
+              <button class="btn-card-details" onclick="showProductDetails('iphone-16-pro-max')">View Details</button>
+              <label class="compare-toggle-label">
+                <input type="checkbox" checked onchange="toggleCompare('iPhone 16 Pro Max', this)">
+                <span>Compare</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Card 2: MacBook Air 13" M3 -->
+          <div class="product-item-card" data-category="MacBook">
+            <div class="product-item-badge">✓ Verified in Stock</div>
+            <div class="product-item-image-wrap" onclick="showProductDetails('macbook-air-13-m3')">
+              <img src="assets/images/macbook.jpg" alt="MacBook Air 13 M3" class="product-item-img">
+            </div>
+            <div class="product-item-colors">
+              <span class="color-dot active" style="background: #1e2430;" title="Midnight"></span>
+              <span class="color-dot" style="background: #e5ded4;" title="Starlight"></span>
+              <span class="color-dot" style="background: #7d7e80;" title="Space Gray"></span>
+              <span class="color-dot" style="background: #e0e1e2;" title="Silver"></span>
+            </div>
+            <h4 class="product-item-name" onclick="showProductDetails('macbook-air-13-m3')">MacBook Air 13" M3</h4>
+            <div class="product-item-price-from">From 13,990,000 UZS</div>
+            <div class="product-item-spec">M3 chip • 256 GB – 2 TB</div>
+            <div class="product-item-actions">
+              <button class="btn-card-details" onclick="showProductDetails('macbook-air-13-m3')">View Details</button>
+              <label class="compare-toggle-label">
+                <input type="checkbox" checked onchange="toggleCompare('MacBook Air 13 M3', this)">
+                <span>Compare</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Card 3: iPad Air 11" M2 -->
+          <div class="product-item-card" data-category="iPad">
+            <div class="product-item-badge">✓ Verified in Stock</div>
+            <div class="product-item-image-wrap" onclick="showProductDetails('ipad-air-11-m2')">
+              <img src="assets/images/ipad.jpg" alt="iPad Air 11 M2" class="product-item-img">
+            </div>
+            <div class="product-item-colors">
+              <span class="color-dot active" style="background: #68696b;" title="Space Gray"></span>
+              <span class="color-dot" style="background: #e5ded4;" title="Starlight"></span>
+              <span class="color-dot" style="background: #b4b2cb;" title="Purple"></span>
+              <span class="color-dot" style="background: #95a8b7;" title="Blue"></span>
+            </div>
+            <h4 class="product-item-name" onclick="showProductDetails('ipad-air-11-m2')">iPad Air 11" M2</h4>
+            <div class="product-item-price-from">From 7,890,000 UZS</div>
+            <div class="product-item-spec">M2 chip • 128 GB – 1 TB</div>
+            <div class="product-item-actions">
+              <button class="btn-card-details" onclick="showProductDetails('ipad-air-11-m2')">View Details</button>
+              <label class="compare-toggle-label">
+                <input type="checkbox" onchange="toggleCompare('iPad Air 11 M2', this)">
+                <span>Compare</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Card 4: Apple Watch Series 10 -->
+          <div class="product-item-card" data-category="Apple Watch">
+            <div class="product-item-badge">✓ Verified in Stock</div>
+            <div class="product-item-image-wrap" onclick="showProductDetails('apple-watch-series-10')">
+              <img src="assets/images/watch.jpg" alt="Apple Watch Series 10" class="product-item-img">
+            </div>
+            <div class="product-item-colors">
+              <span class="color-dot active" style="background: #101010;" title="Jet Black"></span>
+              <span class="color-dot" style="background: #e7b4a8;" title="Rose Gold"></span>
+              <span class="color-dot" style="background: #e0e1e2;" title="Silver"></span>
+            </div>
+            <h4 class="product-item-name" onclick="showProductDetails('apple-watch-series-10')">Apple Watch Series 10</h4>
+            <div class="product-item-price-from">From 5,490,000 UZS</div>
+            <div class="product-item-spec">S10 chip • 64 GB</div>
+            <div class="product-item-actions">
+              <button class="btn-card-details" onclick="showProductDetails('apple-watch-series-10')">View Details</button>
+              <label class="compare-toggle-label">
+                <input type="checkbox" onchange="toggleCompare('Apple Watch Series 10', this)">
+                <span>Compare</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Card 5: AirPods Pro 2 -->
+          <div class="product-item-card" data-category="AirPods">
+            <div class="product-item-badge">✓ Verified in Stock</div>
+            <div class="product-item-image-wrap" onclick="showProductDetails('airpods-pro-2')">
+              <img src="assets/images/airpods.jpg" alt="AirPods Pro 2" class="product-item-img">
+            </div>
+            <div class="product-item-colors">
+              <span class="color-dot active" style="background: #ffffff;" title="White"></span>
+            </div>
+            <h4 class="product-item-name" onclick="showProductDetails('airpods-pro-2')">AirPods Pro (2nd Gen, USB-C)</h4>
+            <div class="product-item-price-from">From 3,190,000 UZS</div>
+            <div class="product-item-spec">H2 chip • Active Noise Cancelling</div>
+            <div class="product-item-actions">
+              <button class="btn-card-details" onclick="showProductDetails('airpods-pro-2')">View Details</button>
+              <label class="compare-toggle-label">
+                <input type="checkbox" onchange="toggleCompare('AirPods Pro 2', this)">
+                <span>Compare</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Card 6: iPhone 16 Pro -->
+          <div class="product-item-card" data-category="iPhone">
+            <div class="product-item-badge">✓ Verified in Stock</div>
+            <div class="product-item-image-wrap" onclick="showProductDetails('iphone-16-pro')">
+              <img src="assets/images/iphone.jpg" alt="iPhone 16 Pro" class="product-item-img">
+            </div>
+            <div class="product-item-colors">
+              <span class="color-dot active" style="background: #1f2022;" title="Black Titanium"></span>
+              <span class="color-dot" style="background: #f2f1ed;" title="White Titanium"></span>
+              <span class="color-dot" style="background: #9f9990;" title="Natural Titanium"></span>
+              <span class="color-dot" style="background: #c7b198;" title="Desert Titanium"></span>
+            </div>
+            <h4 class="product-item-name" onclick="showProductDetails('iphone-16-pro')">iPhone 16 Pro</h4>
+            <div class="product-item-price-from">From 13,899,000 UZS</div>
+            <div class="product-item-spec">A18 Pro chip • 128 GB – 1 TB</div>
+            <div class="product-item-actions">
+              <button class="btn-card-details" onclick="showProductDetails('iphone-16-pro')">View Details</button>
+              <label class="compare-toggle-label">
+                <input type="checkbox" checked onchange="toggleCompare('iPhone 16 Pro', this)">
+                <span>Compare</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. PRODUCT DETAIL SPOTLIGHT (Screen 3) ==================== -->
+    <section class="section detail-spotlight-section" id="detail-spotlight">
+      <div class="container">
+        <div class="section-badge-pill">Detailed Product View</div>
+        <div class="detail-spotlight-card">
+          <div class="detail-breadcrumbs">
+            <span>Products</span> / <span>Smartphones</span> / <span class="active-crumb">iPhone 16 Pro Max</span>
+          </div>
+
+          <div class="detail-grid">
+            <!-- Left: Interactive Gallery -->
+            <div class="detail-gallery-column">
+              <div class="gallery-viewport">
+                <button class="gallery-nav-btn prev" onclick="slideGallery(-1)">‹</button>
+                <img src="assets/images/iphone.jpg" alt="iPhone 16 Pro Max Preview" id="spotlightMainImg" class="gallery-hero-image">
+                <button class="gallery-nav-btn next" onclick="slideGallery(1)">›</button>
+              </div>
+              <div class="gallery-thumbnails-strip">
+                <div class="thumb-box active" onclick="switchThumbnail('assets/images/iphone.jpg', this)">
+                  <img src="assets/images/iphone.jpg" alt="Angle 1">
+                </div>
+                <div class="thumb-box" onclick="switchThumbnail('assets/images/hero.jpg', this)">
+                  <img src="assets/images/hero.jpg" alt="Angle 2">
+                </div>
+                <div class="thumb-box" onclick="switchThumbnail('assets/images/iphone.jpg', this)">
+                  <img src="assets/images/iphone.jpg" alt="Angle 3">
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Configurator & Info -->
+            <div class="detail-info-column">
+              <div class="detail-header-row">
+                <h2 class="detail-product-title">iPhone 16 Pro Max</h2>
+                <div class="detail-rating-tag">
+                  <span class="stars-gold">★★★★★</span>
+                  <span class="rating-text">4.9 (358 reviews)</span>
+                </div>
+              </div>
+
+              <div class="detail-price-banner">
+                <div class="price-from-label">From verified sellers in Uzbekistan</div>
+                <div class="price-big-number" id="spotlightPriceDisplay">15,499,000 UZS</div>
+                <div class="price-seller-note">Price may vary depending on seller and payment terms</div>
+              </div>
+
+              <!-- Available Colors -->
+              <div class="option-picker-group">
+                <label class="option-label">Available Colors: <strong id="selectedColorName">Desert Titanium</strong></label>
+                <div class="color-chips-row">
+                  <button class="color-chip-btn" onclick="selectSpotlightColor('Black Titanium', '#1f2022', this)">
+                    <span class="chip-circle" style="background: #1f2022;"></span>
+                    <span>Black Titanium</span>
+                  </button>
+                  <button class="color-chip-btn" onclick="selectSpotlightColor('White Titanium', '#f2f1ed', this)">
+                    <span class="chip-circle" style="background: #f2f1ed;"></span>
+                    <span>White Titanium</span>
+                  </button>
+                  <button class="color-chip-btn" onclick="selectSpotlightColor('Natural Titanium', '#9f9990', this)">
+                    <span class="chip-circle" style="background: #9f9990;"></span>
+                    <span>Natural Titanium</span>
+                  </button>
+                  <button class="color-chip-btn active" onclick="selectSpotlightColor('Desert Titanium', '#c7b198', this)">
+                    <span class="chip-circle" style="background: #c7b198;"></span>
+                    <span>Desert Titanium</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Storage Options -->
+              <div class="option-picker-group">
+                <label class="option-label">Storage Capacity:</label>
+                <div class="storage-selector-row">
+                  <button class="storage-btn active" onclick="selectSpotlightStorage('256 GB', '15,499,000 UZS', this)">256 GB</button>
+                  <button class="storage-btn" onclick="selectSpotlightStorage('512 GB', '17,800,000 UZS', this)">512 GB</button>
+                  <button class="storage-btn" onclick="selectSpotlightStorage('1 TB', '20,900,000 UZS', this)">1 TB</button>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="detail-actions-row">
+                <button class="btn-compare-outline" onclick="scrollToSection('compare-section')">
+                  <span>⚖️ Compare Product</span>
+                </button>
+                <button class="btn-find-seller-dark" onclick="openModal('reservationModal')">
+                  <span>🛍️ Reserve in Store / Order</span>
+                </button>
+              </div>
+
+              <!-- Quick Specs Ribbon -->
+              <div class="specs-ribbon-grid">
+                <div class="ribbon-card">
+                  <span class="ribbon-icon">⚡</span>
+                  <strong>A18 Pro chip</strong>
+                  <span>Next-level performance</span>
+                </div>
+                <div class="ribbon-card">
+                  <span class="ribbon-icon">📱</span>
+                  <strong>6.9" Super Retina</strong>
+                  <span>Brilliant display with ProMotion</span>
+                </div>
+                <div class="ribbon-card">
+                  <span class="ribbon-icon">📸</span>
+                  <strong>Pro Camera</strong>
+                  <span>48 MP, 5x optical zoom</span>
+                </div>
+                <div class="ribbon-card">
+                  <span class="ribbon-icon">🔋</span>
+                  <strong>Up to 33 hours</strong>
+                  <span>All-day battery life</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Analysis: Key Advantages / Limitations / Best For -->
+          <div class="detail-analysis-grid">
+            <div class="analysis-box">
+              <h4 class="analysis-title green">✓ Key Advantages</h4>
+              <ul class="analysis-list">
+                <li>Exceptional performance with latest A18 Pro chip</li>
+                <li>Stunning 6.9" Super Retina XDR with 120Hz ProMotion</li>
+                <li>Professional-grade camera system with 5x zoom</li>
+                <li>Longest battery life in an iPhone ever</li>
+                <li>Premium Grade 5 Titanium lightweight design</li>
+              </ul>
+            </div>
+            <div class="analysis-box">
+              <h4 class="analysis-title red">— Possible Limitations</h4>
+              <ul class="analysis-list">
+                <li>Higher price point compared to previous models</li>
+                <li>Large form factor may be bulky for one hand</li>
+                <li>No charger brick included in the retail box</li>
+              </ul>
+            </div>
+            <div class="analysis-box">
+              <h4 class="analysis-title blue">★ Best For</h4>
+              <ul class="analysis-list">
+                <li>Content creators & video bloggers</li>
+                <li>Photography & filmmaking enthusiasts</li>
+                <li>Business power users & multitaskers</li>
+                <li>Gamers seeking maximum frame rates</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Live Stores Table for this Product -->
+          <div class="detail-stores-table-wrap">
+            <h4 class="stores-table-title">Available in Verified Stores (Tashkent):</h4>
+            <table class="stores-table">
+              <thead>
+                <tr>
+                  <th>Store</th>
+                  <th>Price</th>
+                  <th>Location</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="store-cell-name">
+                      <span class="store-avatar">🏬</span>
+                      <div>
+                        <strong>TechZone</strong>
+                        <span class="badge-verified-tiny">✓ Verified</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><strong class="price-cell">15,499,000 UZS</strong></td>
+                  <td>A. Temur St, 108, Tashkent (+998 71 234 56 78)</td>
+                  <td><span class="stock-pill in-stock">● In Stock</span></td>
+                  <td><button class="btn-table-reserve" onclick="openModal('reservationModal', 'TechZone', '15,499,000 UZS')">Reserve</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="store-cell-name">
+                      <span class="store-avatar">🏬</span>
+                      <div>
+                        <strong>iStore</strong>
+                        <span class="badge-verified-tiny">✓ Verified</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><strong class="price-cell">15,650,000 UZS</strong></td>
+                  <td>Mustaqillik Ave, 77, Tashkent (+998 71 204 56 77)</td>
+                  <td><span class="stock-pill in-stock">● In Stock</span></td>
+                  <td><button class="btn-table-reserve" onclick="openModal('reservationModal', 'iStore', '15,650,000 UZS')">Reserve</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="store-cell-name">
+                      <span class="store-avatar">🏬</span>
+                      <div>
+                        <strong>Apple World</strong>
+                        <span class="badge-verified-tiny">✓ Verified</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><strong class="price-cell">15,700,000 UZS</strong></td>
+                  <td>Amir Temur St, 42, Tashkent (+998 71 785 45 21)</td>
+                  <td><span class="stock-pill in-stock">● In Stock</span></td>
+                  <td><button class="btn-table-reserve" onclick="openModal('reservationModal', 'Apple World', '15,700,000 UZS')">Reserve</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. COMPARE PRODUCTS MATRIX (Screen 4) ==================== -->
+    <section class="section compare-section" id="compare-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div>
+            <h2 class="section-title">Compare Products</h2>
+            <p class="section-subtitle">Compare up to 3 Apple products side by side to make the right choice</p>
+          </div>
+          <button class="btn-clear-compare" onclick="resetCompare()">Clear all comparison</button>
+        </div>
+
+        <div class="compare-table-wrapper">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th class="spec-label-col">Device Specs</th>
+                <th class="product-col">
+                  <div class="compare-card-header">
+                    <button class="btn-remove-col" onclick="removeCompareCol(1)">✕</button>
+                    <img src="assets/images/iphone.jpg" alt="iPhone 16 Pro Max" class="compare-thumb">
+                    <h4>iPhone 16 Pro Max</h4>
+                    <div class="compare-price-tag">From 15,499,000 UZS</div>
+                    <button class="btn-mini-reserve" onclick="openModal('reservationModal', 'TechZone')">Reserve</button>
+                  </div>
+                </th>
+                <th class="product-col">
+                  <div class="compare-card-header">
+                    <button class="btn-remove-col" onclick="removeCompareCol(2)">✕</button>
+                    <img src="assets/images/iphone.jpg" alt="iPhone 16 Pro" class="compare-thumb">
+                    <h4>iPhone 16 Pro</h4>
+                    <div class="compare-price-tag">From 13,899,000 UZS</div>
+                    <button class="btn-mini-reserve" onclick="openModal('reservationModal', 'iStore')">Reserve</button>
+                  </div>
+                </th>
+                <th class="product-col">
+                  <div class="compare-card-header">
+                    <button class="btn-remove-col" onclick="removeCompareCol(3)">✕</button>
+                    <img src="assets/images/macbook.jpg" alt="MacBook Air 13 M3" class="compare-thumb">
+                    <h4>MacBook Air 13" M3</h4>
+                    <div class="compare-price-tag">From 13,990,000 UZS</div>
+                    <button class="btn-mini-reserve" onclick="openModal('reservationModal', 'Apple World')">Reserve</button>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Processor Chip</td>
+                <td><strong>A18 Pro</strong> (6-core GPU)</td>
+                <td><strong>A18 Pro</strong> (6-core GPU)</td>
+                <td><strong>Apple M3</strong> (10-core GPU)</td>
+              </tr>
+              <tr>
+                <td>Display</td>
+                <td>6.9" Super Retina XDR (120Hz)</td>
+                <td>6.3" Super Retina XDR (120Hz)</td>
+                <td>13.6" Liquid Retina (500 nits)</td>
+              </tr>
+              <tr>
+                <td>Battery Endurance</td>
+                <td>Up to 33 hours video</td>
+                <td>Up to 27 hours video</td>
+                <td>Up to 18 hours web/video</td>
+              </tr>
+              <tr>
+                <td>Cameras</td>
+                <td>48MP Fusion + 48MP UW + 5x Telephoto</td>
+                <td>48MP Fusion + 48MP UW + 5x Telephoto</td>
+                <td>1080p FaceTime HD camera</td>
+              </tr>
+              <tr>
+                <td>Storage Choices</td>
+                <td>256 GB, 512 GB, 1 TB</td>
+                <td>128 GB, 256 GB, 512 GB, 1 TB</td>
+                <td>256 GB, 512 GB, 1 TB, 2 TB</td>
+              </tr>
+              <tr>
+                <td>Weight</td>
+                <td>227 grams</td>
+                <td>199 grams</td>
+                <td>1.24 kg</td>
+              </tr>
+              <tr>
+                <td>Body Material</td>
+                <td>Grade 5 Titanium</td>
+                <td>Grade 5 Titanium</td>
+                <td>100% Recycled Aluminum</td>
+              </tr>
+              <tr>
+                <td>Recommended For</td>
+                <td>Ultimate screen, gaming, max battery</td>
+                <td>Compact pro camera, single-hand use</td>
+                <td>College, coding, office & mobility</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. HELP ME CHOOSE WIZARD (Screen 5) ==================== -->
+    <section class="section quiz-section" id="quiz-section">
+      <div class="container">
+        <div class="quiz-box">
+          <div class="quiz-top-info">
+            <span class="quiz-badge">Interactive Advisor</span>
+            <span class="step-indicator" id="stepCounterText">Step 1 of 5</span>
+          </div>
+          <div class="quiz-bar-bg">
+            <div class="quiz-bar-fill" id="quizProgressFill" style="width: 20%;"></div>
+          </div>
+
+          <div id="quizStepContainer">
+            <h2 class="quiz-heading">1. What will you mainly use the device for?</h2>
+            <p class="quiz-subheading">Select your primary activity to let our algorithm recommend optimal hardware specifications.</p>
+
+            <div class="quiz-options-cards-grid">
+              <div class="quiz-card-option selected" onclick="selectQuizOption(this, 'study')">
+                <span class="quiz-card-icon">🎓</span>
+                <span class="quiz-card-text">Study / Education</span>
+              </div>
+              <div class="quiz-card-option" onclick="selectQuizOption(this, 'office')">
+                <span class="quiz-card-icon">💼</span>
+                <span class="quiz-card-text">Office Work</span>
+              </div>
+              <div class="quiz-card-option" onclick="selectQuizOption(this, 'programming')">
+                <span class="quiz-card-icon">💻</span>
+                <span class="quiz-card-text">Programming</span>
+              </div>
+              <div class="quiz-card-option" onclick="selectQuizOption(this, 'design')">
+                <span class="quiz-card-icon">🎨</span>
+                <span class="quiz-card-text">Design & Art</span>
+              </div>
+              <div class="quiz-card-option" onclick="selectQuizOption(this, 'video')">
+                <span class="quiz-card-icon">🎬</span>
+                <span class="quiz-card-text">Video Editing</span>
+              </div>
+              <div class="quiz-card-option" onclick="selectQuizOption(this, 'photo')">
+                <span class="quiz-card-icon">📷</span>
+                <span class="quiz-card-text">Photography</span>
+              </div>
+              <div class="quiz-card-option" onclick="selectQuizOption(this, 'social')">
+                <span class="quiz-card-icon">📱</span>
+                <span class="quiz-card-text">Social Media</span>
+              </div>
+              <div class="quiz-card-option" onclick="selectQuizOption(this, 'gaming')">
+                <span class="quiz-card-icon">🎮</span>
+                <span class="quiz-card-text">Gaming</span>
+              </div>
+              <div class="quiz-card-option" onclick="selectQuizOption(this, 'everyday')">
+                <span class="quiz-card-icon">☕</span>
+                <span class="quiz-card-text">Everyday Use</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-bottom-controls">
+            <button class="btn-quiz-back" id="quizBackBtn" disabled onclick="prevQuizStep()">Back</button>
+            <div class="quiz-note-text">
+              🔒 Unbiased recommendation based strictly on performance benchmarks and price in UZS.
+            </div>
+            <button class="btn-quiz-next" id="quizNextBtn" onclick="nextQuizStep()">Next Step →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. FIND APPLE SELLERS & MAP (Screen 6) ==================== -->
+    <section class="section sellers-section" id="sellers-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div>
+            <h2 class="section-title">Find Apple Sellers Across Uzbekistan</h2>
+            <p class="section-subtitle">Discover trusted stores in your city with real locations, contacts and available products.</p>
+          </div>
+        </div>
+
+        <!-- City Filter Chips -->
+        <div class="city-chips-bar">
+          <button class="city-tab-chip active" onclick="filterCity('All Cities', this)">All Cities</button>
+          <button class="city-tab-chip" onclick="filterCity('Tashkent', this)">Tashkent</button>
+          <button class="city-tab-chip" onclick="filterCity('Samarkand', this)">Samarkand</button>
+          <button class="city-tab-chip" onclick="filterCity('Bukhara', this)">Bukhara</button>
+          <button class="city-tab-chip" onclick="filterCity('Andijan', this)">Andijan</button>
+          <button class="city-tab-chip" onclick="filterCity('Namangan', this)">Namangan</button>
+          <button class="city-tab-chip" onclick="filterCity('Fergana', this)">Fergana</button>
+          <button class="city-tab-chip" onclick="filterCity('Other', this)">Other</button>
+        </div>
+
+        <div class="sellers-split-container">
+          <!-- Interactive Vector Styled Map -->
+          <div class="map-interactive-box">
+            <div class="map-header-bar">
+              <span class="map-city-name" id="mapCityIndicator">📍 Tashkent, Uzbekistan</span>
+              <span class="map-legend">3 Verified Stores Active</span>
+            </div>
+
+            <!-- Stylized SVG Map Representation -->
+            <div class="svg-map-stage">
+              <svg viewBox="0 0 600 420" class="tashkent-vector-map">
+                <!-- Decorative roads and metro lines -->
+                <rect width="600" height="420" fill="#f0f3f6" rx="14"/>
+                <path d="M 50 180 Q 200 120 400 240 T 580 320" stroke="#e0e5eb" stroke-width="12" fill="none"/>
+                <path d="M 120 40 Q 260 210 320 390" stroke="#e0e5eb" stroke-width="10" fill="none"/>
+                <path d="M 280 30 L 330 390" stroke="#0071e3" stroke-width="3" stroke-dasharray="6,4" fill="none" opacity="0.4"/>
+                <circle cx="300" cy="210" r="140" stroke="#d5dce4" stroke-width="1.5" stroke-dasharray="4,4" fill="none"/>
+                
+                <!-- Districts labels -->
+                <text x="210" y="110" fill="#9ba3af" font-size="12" font-weight="600">Yunusabad</text>
+                <text x="360" y="160" fill="#9ba3af" font-size="12" font-weight="600">Mirzo-Ulugbek</text>
+                <text x="240" y="280" fill="#9ba3af" font-size="12" font-weight="600">Mirabad</text>
+                <text x="110" y="240" fill="#9ba3af" font-size="12" font-weight="600">Chilanzar</text>
+
+                <!-- Store Pin 1: TechZone -->
+                <g class="interactive-pin" onclick="highlightStoreCard('techzone')" id="pin-techzone" transform="translate(240, 130)">
+                  <circle cx="0" cy="0" r="16" class="pin-pulse"/>
+                  <circle cx="0" cy="0" r="9" fill="#1d1d1f"/>
+                  <circle cx="0" cy="0" r="4" fill="#34c759"/>
+                  <text x="14" y="5" font-size="11" font-weight="700" fill="#1d1d1f">TechZone</text>
+                </g>
+
+                <!-- Store Pin 2: iStore -->
+                <g class="interactive-pin" onclick="highlightStoreCard('istore')" id="pin-istore" transform="translate(370, 190)">
+                  <circle cx="0" cy="0" r="16" class="pin-pulse"/>
+                  <circle cx="0" cy="0" r="9" fill="#1d1d1f"/>
+                  <circle cx="0" cy="0" r="4" fill="#34c759"/>
+                  <text x="14" y="5" font-size="11" font-weight="700" fill="#1d1d1f">iStore</text>
+                </g>
+
+                <!-- Store Pin 3: Apple World -->
+                <g class="interactive-pin" onclick="highlightStoreCard('apple-world')" id="pin-apple-world" transform="translate(280, 260)">
+                  <circle cx="0" cy="0" r="16" class="pin-pulse"/>
+                  <circle cx="0" cy="0" r="9" fill="#1d1d1f"/>
+                  <circle cx="0" cy="0" r="4" fill="#34c759"/>
+                  <text x="14" y="5" font-size="11" font-weight="700" fill="#1d1d1f">Apple World</text>
+                </g>
+              </svg>
+            </div>
+
+            <div class="map-footer-hint">
+              <span>💡 Click any pin on the map to highlight store details</span>
+            </div>
+          </div>
+
+          <!-- Store Cards List -->
+          <div class="store-cards-stack" id="storeCardsList">
+            <!-- TechZone -->
+            <div class="store-item-card" id="card-techzone">
+              <div class="store-top-line">
+                <div>
+                  <h4 class="store-title">TechZone</h4>
+                  <span class="badge-store-verified">✓ Verified Reseller</span>
+                </div>
+                <div class="store-rating-score">★ 4.9 (1,420)</div>
+              </div>
+              <div class="store-meta-line">📍 A. Temur St, 108, Tashkent</div>
+              <div class="store-meta-line">📞 +998 71 234 56 78</div>
+              <div class="store-meta-line">📦 Available: iPhone, MacBook, iPad, AirPods</div>
+              <div class="store-meta-line">🕒 Open: 09:00 – 21:00</div>
+              <div class="store-bottom-bar">
+                <span class="store-price-bracket">Range: 3.1M – 48M UZS</span>
+                <button class="btn-store-visit" onclick="openModal('reservationModal', 'TechZone')">Reserve / Visit</button>
+              </div>
+            </div>
+
+            <!-- iStore -->
+            <div class="store-item-card" id="card-istore">
+              <div class="store-top-line">
+                <div>
+                  <h4 class="store-title">iStore</h4>
+                  <span class="badge-store-verified">✓ Verified Reseller</span>
+                </div>
+                <div class="store-rating-score">★ 4.8 (980)</div>
+              </div>
+              <div class="store-meta-line">📍 Mustaqillik Ave, 77, Tashkent</div>
+              <div class="store-meta-line">📞 +998 71 204 56 77</div>
+              <div class="store-meta-line">📦 Available: iPhone, iPad, Apple Watch</div>
+              <div class="store-meta-line">🕒 Open: 10:00 – 22:00</div>
+              <div class="store-bottom-bar">
+                <span class="store-price-bracket">Range: 3.2M – 35M UZS</span>
+                <button class="btn-store-visit" onclick="openModal('reservationModal', 'iStore')">Reserve / Visit</button>
+              </div>
+            </div>
+
+            <!-- Apple World -->
+            <div class="store-item-card" id="card-apple-world">
+              <div class="store-top-line">
+                <div>
+                  <h4 class="store-title">Apple World</h4>
+                  <span class="badge-store-verified">✓ Verified Reseller</span>
+                </div>
+                <div class="store-rating-score">★ 4.8 (1,150)</div>
+              </div>
+              <div class="store-meta-line">📍 Amir Temur St, 42, Tashkent</div>
+              <div class="store-meta-line">📞 +998 71 785 45 21</div>
+              <div class="store-meta-line">📦 Available: iPhone, MacBook, iPad, Watch</div>
+              <div class="store-meta-line">🕒 Open: 09:00 – 21:00</div>
+              <div class="store-bottom-bar">
+                <span class="store-price-bracket">Range: 3.4M – 52M UZS</span>
+                <button class="btn-store-visit" onclick="openModal('reservationModal', 'Apple World')">Reserve / Visit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== MODAL: RESERVATION & DELIVERY ==================== -->
+  <div class="modal-backdrop" id="reservationModal">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3 class="modal-title">Reserve / Delivery Order (Prototype)</h3>
+        <button class="modal-close-btn" onclick="closeModal('reservationModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-info-banner">
+          <span>🛍️ Selected item: <strong id="modalProductName">iPhone 16 Pro Max (Desert Titanium, 256 GB)</strong></span>
+          <span id="modalStoreName">🏬 Store: TechZone (15,499,000 UZS)</span>
+        </div>
+
+        <div class="modal-form-grid">
+          <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="e.g. Jasur Aliyev" value="Jasur Aliyev" class="text-input">
+          </div>
+          <div class="input-group">
+            <label>Phone Number (Uzbekistan)</label>
+            <input type="tel" placeholder="+998 90 123 45 67" value="+998 90 123 45 67" class="text-input">
+          </div>
+          <div class="input-group">
+            <label>Order Type</label>
+            <select class="text-input">
+              <option>Pickup at Store (Free hold for 48 hours)</option>
+              <option>Express Courier Delivery in Tashkent (within 2 hours)</option>
+              <option>Regional Delivery (BTS Express / EMU)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Payment Preference</label>
+            <select class="text-input">
+              <option>Cash / Card on In-Store Pickup</option>
+              <option>Uzcard / Humo online</option>
+              <option>Nasiya 0-0-12 Installments</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeModal('reservationModal')">Cancel</button>
+        <button class="btn-confirm" onclick="triggerToast('✓ Reservation code #UZ-9482 created! Store has held this device.')">
+          Confirm Reservation
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: PARENT SHORTLIST (Image 3 Feature) ==================== -->
+  <div class="modal-backdrop" id="shortlistModal">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3 class="modal-title">Shareable Shortlist for Parents</h3>
+        <button class="modal-close-btn" onclick="closeModal('shortlistModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc-text">
+          Solves <em>«Family-assisted buying»</em>: A transparent, clear breakdown of selected device, verified price in Uzbekistan, and warranty details to share with parents or sponsors.
+        </p>
+
+        <div class="shortlist-print-card">
+          <div class="shortlist-header">
+            <h4>Apple Education & Study Configuration</h4>
+            <span class="shortlist-date">Generated: October 2026</span>
+          </div>
+
+          <div class="shortlist-rows">
+            <div class="shortlist-row">
+              <span>Device</span>
+              <strong>MacBook Air 13" M3 (Midnight, 16GB / 512GB)</strong>
+            </div>
+            <div class="shortlist-row">
+              <span>Purpose</span>
+              <span>Software Development & University Coursework (4+ years lifecycle)</span>
+            </div>
+            <div class="shortlist-row">
+              <span>Verified Store</span>
+              <strong>TechZone (Amir Temur St, 108, Tashkent)</strong>
+            </div>
+            <div class="shortlist-row">
+              <span>Official Warranty</span>
+              <span class="badge-green">✓ 1 Year Apple Official International Warranty</span>
+            </div>
+            <div class="shortlist-row total">
+              <span>Best Verified Price</span>
+              <strong class="total-price">16,490,000 UZS</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeModal('shortlistModal')">Close</button>
+        <button class="btn-confirm" onclick="copyShortlistLink()">
+          <span>📋 Copy Shareable Link</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification element -->
+  <div class="toast-bubble" id="appToast">Notification message</div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-col-main">
+        <div class="brand-area footer-brand">
+          <span class="apple-logo-icon"></span>
+          <span class="brand-name">Apple Finder Uzbekistan</span>
+        </div>
+        <p class="footer-desc">
+          Professional UI Prototype for the all-in-one Apple product catalog, specification comparison, and verified retail aggregator across Tashkent and Uzbekistan regions.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Catalogue</h5>
+        <ul>
+          <li><a href="#popular-section">iPhone 16 Series</a></li>
+          <li><a href="#popular-section">MacBook Air & Pro</a></li>
+          <li><a href="#popular-section">iPad Air & Pro</a></li>
+          <li><a href="#popular-section">Apple Watch S10</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#compare-section">Compare Matrix</a></li>
+          <li><a href="#quiz-section">Help Me Choose</a></li>
+          <li><a href="#sellers-section">Store Locator</a></li>
+          <li><a href="#hero">Warranty Check</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Verified Stores</h5>
+        <ul>
+          <li><a href="#sellers-section">TechZone Tashkent</a></li>
+          <li><a href="#sellers-section">iStore Uzbekistan</a></li>
+          <li><a href="#sellers-section">Apple World</a></li>
+          <li><a href="#sellers-section">Samarkand Center</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Apple Finder Uzbekistan. Interactive UI Frontend Prototype. All brand names belong to Apple Inc.</p>
+      <div class="footer-links-inline">
+        <span>Privacy Policy</span> · <span>Terms of Service</span> · <span>UzIMEI Compliance</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
